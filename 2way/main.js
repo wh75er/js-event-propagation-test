@@ -19,14 +19,12 @@ const toggleVisibility = (element) => {
 }
 
 const clickApplicationListener = (e) => {
-  console.log('We are here(2)!')
   toggleVisibility(document.getElementById('pop-up'))
 }
 
 application.addEventListener('click', clickApplicationListener)
 
 const clickPopUpListener = (e) => {
-  console.log('We are here!')
   e.stopPropagation()
 }
 

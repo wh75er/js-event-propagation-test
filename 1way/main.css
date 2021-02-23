@@ -11,3 +11,7 @@ div#pop-up {
   background-color: #FF0000;
   block-size: 300px;
 }
+
+p {
+    background-color: yellow;
+}

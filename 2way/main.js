@@ -7,11 +7,13 @@ const createElement = (tag, text) => {
   return element
 }
 
-var appHeader = createElement('H1', "Main page...")
+var appHeader = createElement('H1', 'Main page...')
+var popUpElement = createElement('P', 'Element')
 var popUp = createElement('DIV', 'Pop up window')
 popUp.id = 'pop-up'
 
 application.appendChild(appHeader)
+popUp.appendChild(popUpElement)
 application.appendChild(popUp)
 
 const toggleVisibility = (element) => {

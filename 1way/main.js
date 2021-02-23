@@ -9,22 +9,25 @@ const createElement = (tag, text) => {
 
 var appHeader = createElement('H1', "Main page...")
 var popUp = createElement('DIV', 'Pop up window')
+var popUpElement = createElement('P', 'Element')
 popUp.id = 'pop-up'
 
 application.appendChild(appHeader)
+popUp.appendChild(popUpElement)
 application.appendChild(popUp)
 
 const toggleVisibility = (element) => {
   element.hidden = element.hidden ? false : true
 }
 
-const clickListener = (e) => {
-  if (e.target.id === 'pop-up') {
-    return
-  }
-  
+const clickApplicationListener = (e) => {
   toggleVisibility(document.getElementById('pop-up'))
 }
 
-application.addEventListener('click', clickListener)
+application.addEventListener('click', clickApplicationListener)
 
+const clickPopUpListener = (e) => {
+    e.stopPropagation()
+}
+
+popUp.addEventListener('click', clickPopUpListener, true)
